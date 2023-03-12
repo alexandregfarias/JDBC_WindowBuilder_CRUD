@@ -1,0 +1,49 @@
+Para conectar ao Banco de Dados via JDBC é necessário:
+
+1 - Baixar o Connector-J:
+
+https://dev.mysql.com/downloads/connector/j/
+
+IMPORTANTE!!!!!!!
+Em Select Operating System, é necessário escolher a opção:
+Platform Independent
+
+E baixar a opção:
+Platform Independent (Architecture Independent), .ZIP Archive de 4.8M.
+
+Vá em algum diretório e extraia a pasta. Eu por exemplo, extraí em C:/	
+
+2 - Agora no Eclipse:
+-> Crie um projeto com o nome que quiser. 
+-> Crie um pacote com o nome que quiser.
+-> Crie uma classe com o nome que quiser.
+
+
+3 - Clique com o botão direito em cima DO PROJETO criado e selecione a opção "Build Path" "Configure Build Path"
+Abrirá uma nova Janela (Java Build Path), nesta janela, na aba Libraries, clique em Module Path, Add External Jars...
+Busque a pasta MYSQL Connector J, no meu caso: C:\mysql-connector-j-8.0.32
+
+Dentro da pasta, selecione o arquivo .jar mysql-connector-j-8.0.32 (ou a versão que tiver baixado).
+
+Agora clique em Apply e depois em Apply and close.
+
+Após isso, vá até a class main que criou no seu projeto, e jogue o seguinte código:
+
+	public static void main(String[] args) throws SQLException, ClassNotFoundException {
+		
+				
+			Class.forName("com.mysql.cj.jdbc.Driver"); // Esse é o caminho onde a classe Driver se encontra. em Referenced Libraries, mysql-connector: com.mysql.cj.jdbc
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube","root","120756ab"); // Essa interface permite a conexão com o Banco de Dados:
+								// O método estático getConnection permite que você passe 3 parâmetros que serão usados para se conectar ao banco de dados:
+								// Parâmetro 1 "é o endereço para conexão com o banco de dados, perceba que ao final do endereço tem o nome do Banco youtube, caso seja outro banco de dados, use outro banco de dados
+								// Parâmetro 2 "nome de usuário" no caso, root
+								// Parâmetro 3 a senha do usuário root 
+						
+			System.out.println("Conectado.");
+		
+			
+	
+	}
+		
+		Pronto, agora teste se consegiu fazer a conexão com o BD.

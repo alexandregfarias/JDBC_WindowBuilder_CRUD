@@ -1,0 +1,33 @@
+Tutorial para criar Banco de Dados.
+
+!!!!! IMPORTANTE !!!!! "no meu código, chamei o banco de dados de youtube. Use o mesmo nome para copiar o código, depois de entender o código, você muda o nome do banco de dados. 
+
+Primeiramente, pressione as teclas Windows + R:
+
+(isso vai abrir o menu Executar). Lá você digita cmd e aperta enter. Vai abrir o prompt de comando.
+
+
+Dentro do prompt de comando, você escreve o comando:
+
+mysql -u nomedousuario -p   (nome do usuário padrão é root). Vai pedir sua senha, você escreve sua senha e aperta enter.
+
+Caso você tenha colocado a senha corretamente, aparecerá a seguinte mensagem: "Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 129..."
+
+escreva agora:
+
+show databases;   ( Lembre-se que os comandos sql precisam terminar sempre com ; )
+
+vai mostrar os nomes dos bancos de dados criados.
+
+Caso não tenha nenhum banco de dados criado, você pode criar um banco de dados com o comando:
+
+create database novoBanco;
+
+agora novamente, lance o comando - > show databases;
+
+deverá aparecer o seu banco de dados.
+
+Agora escreva:
+use nomedobanco;
+
