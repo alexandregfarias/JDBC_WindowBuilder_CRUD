@@ -152,9 +152,9 @@ public class DataBaseGui {
 							e1.printStackTrace();
 						}
 					} else {
-						break;
+						
 					}
-				} while ((opcao != "nao" && opcao != "sim"));
+				} while ((opcao != "nao" || opcao != "sim"));
 
 			}
 		});
